@@ -1,21 +1,80 @@
-/**index.wxss**/
-.userinfo {
+.section1 {
+  height: 33.33vh;
+}
+
+.img {
+  width: 100%;
+  height: 100%;
+}
+
+.section2 {
+  height: 50rpx;
+  border-bottom: 5rpx solid red;
+  /* border-color: #ff6a00; */
+  position: relative;
+  width: 95%;
+  margin: 0 auto;
+}
+
+.input-wrap {
+  position: absolute;
+  width: 95%;
+  top:-3rpx;
   display: flex;
-  flex-direction: column;
+  margin: 0 auto;
+  left: 50%;
+  transform:translateX(-50%);
+}
+
+
+.tag {
+  color: #743D01;
+  font-size: 24rpx;
+  position: relative;
+  display:flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tag1, .tag2 {
+  width: 25%;
+}
+.tag2{
+   margin-right: 30rpx;
+   left: -3px;
+}
+.tag3 {
+  width: 50%;
+  display: flex;
+}
+.tag3 icon{
+  margin-right: 15rpx;
+  width: 20%;
+  display: flex;
+  justify-content: flex-end;
   align-items: center;
 }
-
-.userinfo-avatar {
-  width: 128rpx;
-  height: 128rpx;
-  margin: 20rpx;
-  border-radius: 50%;
+.tag3 input {
+ display: inline-block;
+ width: 80%;
 }
-
-.userinfo-nickname {
-  color: #aaa;
+ .tag1::after,.tag2::after,.tag3::after {
+  transform: perspective(0.5em) rotateX(2deg);
+  transform-origin: left;
+  border-radius: 8rpx;
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: -2;
+  background: #FF9415;
 }
-
-.usermotto {
-  margin-top: 200px;
+.tag1::after{
+  z-index: -1;
+  border-right: 2rpx solid red;
 }
+.tag3::after{
+  transform-origin: bottom;
+} 

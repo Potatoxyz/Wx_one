@@ -13,7 +13,7 @@
   box-shadow: 6rpx 6rpx 6rpx 6rpx #aaa;
   display: flex;
   align-items: center;
-  height: 70rpx;
+  height: 80rpx;
 }
 
  .tabBar-item{

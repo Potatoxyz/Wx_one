@@ -1,15 +1,17 @@
-<!--index.wxml-->
-<view class="container">
-  <view class="userinfo">
-    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
-    <block wx:else>
-      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
-      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
-    </block>
+<view class='contaienr'>
+  <view class='section1'>
+    <cover-image class='img' scr='http://placehold.it/750*300'></cover-image>
   </view>
-  <view class="usermotto">
-    <text class="user-motto">{{motto}}</text>
+  <view class='section2'>
+    <view class='input-wrap'>
+        <view class='tag tag1'>最新报名</view>
+        <view class='tag tag2'>排行榜</view>
+      <view class='tag tag3'>
+        <icon type='search' size='15'></icon>
+        <input placeholder='请输入名称或编号'></input>
+      </view>
+    </view>
   </view>
 </view>
-<import src="../../template/tabbar/tabbar.wxml"/>
-<template is="tabBar" data="{{tabBar:bindData.tabBar}}"/>
+<import src="../../template/tabbar/tabbar.wxml" />
+<template is="tabBar" data="{{tabBar:bindData.tabBar}}" />

@@ -3,14 +3,14 @@ function tabbarinit() {
   return [
     {
       "current": 0,
-      "pagePath": "/pages/index/index",
+      "pagePath": "/pages/index1/index1",
       "iconPath": "/imgs/home_on.png",
       "selectedIconPath": "/imgs/home_on.png",
       "text": "首页GO"
     },
     {
       "current": 0,
-      "pagePath": "",
+      "pagePath": "/pages/index/index",
       "iconPath": "/imgs/list_on.png",
       "selectedIconPath": "/imgs/list_on.png",
       "text": "活动规则"

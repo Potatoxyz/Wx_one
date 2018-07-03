@@ -1,7 +1,9 @@
 {
   "pages":[
     "pages/index/index",
-    "pages/logs/logs"
+    "pages/logs/logs",
+    "pages/index1/index1",
+    "template/modal/modal"
   ],
   "window":{
     "backgroundTextStyle":"light",
