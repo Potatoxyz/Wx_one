@@ -1,0 +1,45 @@
+.icon{
+  width:40rpx;
+  height: 40rpx;
+}
+.tabBar{
+  width:100%;
+  position: fixed;
+  bottom:0;
+  /* background:#F7F7FA; */
+  background: black;
+  font-size:20rpx;
+  color:#8A8A8A;
+  box-shadow: 6rpx 6rpx 6rpx 6rpx #aaa;
+  display: flex;
+  align-items: center;
+  height: 70rpx;
+}
+
+ .tabBar-item{
+  width:33.33%;
+  text-align: center;
+  border-right: 1px dotted red;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.tabBar-item:last-of-type{
+  border-right: none;
+}
+/*当前字体颜色*/
+.tabBartext{
+  color:red;
+}
+.text{
+  color: #A0A008;
+}
+.navigator{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.icon-wrap{
+  margin-right: 10rpx;
+}
