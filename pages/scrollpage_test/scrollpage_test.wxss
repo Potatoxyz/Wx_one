@@ -1,0 +1,26 @@
+#red{
+  background: red;
+}
+#green{
+  background: green;
+}
+#yellow{
+  background: yellow;
+}
+#blue{
+  background: blue;
+}
+.scroll-view-item{
+    width: 200px;
+  height: 200px;
+}
+.scroll-view_H{
+  height: 200px;
+  display: flex;
+  white-space: nowrap;
+}
+.scroll-view-item_H{
+  height: 100%;
+  display:inline-block;
+  width: 100vw;
+}

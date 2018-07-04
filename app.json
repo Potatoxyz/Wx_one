@@ -3,12 +3,38 @@
     "pages/index/index",
     "pages/logs/logs",
     "pages/index1/index1",
-    "template/modal/modal"
+    "template/modal/modal",
+      "pages/scrollpage_test/scrollpage_test"
   ],
   "window":{
     "backgroundTextStyle":"light",
     "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "WeChat",
     "navigationBarTextStyle":"black"
+  },
+  "tabBar": {
+    "backgroundColor": "black",
+    "color":"#8A8A8A",
+    "selectedColor": "#a0a00c",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+          "iconPath": "/imgs/home.png",
+          "selectedIconPath": "/imgs/home_on.png"
+      },
+      {
+        "pagePath": "pages/scrollpage_test/scrollpage_test",
+        "text": "规则说明",
+          "iconPath": "/imgs/list.png",
+          "selectedIconPath": "/imgs/list_on.png"
+      },
+      {
+        "pagePath": "pages/logs/logs",
+        "text": "日志",
+        "iconPath": "/imgs/user.png",
+        "selectedIconPath": "/imgs/user_on.png"
+      }
+    ]
   } 
 }

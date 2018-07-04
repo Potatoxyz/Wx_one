@@ -1,66 +1,105 @@
-var template = require('../../template/tabbar/tabbar.js');
+
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    
+    pageItems: ['page1', 'page2','page3'],
+    currentPage:'page1'
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
-    template.tabbar("tabBar", 0, this)//0表示第一个tabbar
+  onLoad: function(options) {
+    
   },
-
+  //向左翻页按钮
+  pageChange: function(e) {
+    var isRight = Number(e.currentTarget.dataset.direction);
+    // console.log(typeof isRight);
+    var index;
+    this.data.pageItems.forEach((value,i)=>{
+      if(value==this.data.currentPage){index=i};
+    })
+    var length = this.data.pageItems.length;
+    var firstPage = this.data.pageItems[0];
+    var lastPage = this.data.pageItems[length-1];
+    // console.log(lastPage); 
+    if (isRight){
+      if (index != length - 1){
+        this.setData({
+          currentPage: this.data.pageItems[index + 1]
+        });
+      }
+     else{
+        this.setData({
+          currentPage: firstPage
+        });
+     }
+      // console.log(this.data.currentPage); 
+    }
+    else{
+      if (index != 0){
+        this.setData({
+          currentPage: this.data.pageItems[index - 1]
+        });
+      }
+     else{
+        this.setData({
+          currentPage: lastPage
+        });
+     }
+      // console.log(this.data.currentPage); 
+    }
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
-  onReady: function () {
-    
+  onReady: function() {
+
   },
 
   /**
    * 生命周期函数--监听页面显示
    */
-  onShow: function () {
-    
+  onShow: function() {
+
   },
 
   /**
    * 生命周期函数--监听页面隐藏
    */
-  onHide: function () {
-    
+  onHide: function() {
+
   },
 
   /**
    * 生命周期函数--监听页面卸载
    */
-  onUnload: function () {
-    
+  onUnload: function() {
+
   },
 
   /**
    * 页面相关事件处理函数--监听用户下拉动作
    */
-  onPullDownRefresh: function () {
-    
+  onPullDownRefresh: function() {
+
   },
 
   /**
    * 页面上拉触底事件的处理函数
    */
-  onReachBottom: function () {
-    
+  onReachBottom: function() {
+
   },
 
   /**
    * 用户点击右上角分享
    */
-  onShareAppMessage: function () {
-    
+  onShareAppMessage: function() {
+
   }
 })

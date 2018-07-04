@@ -2,16 +2,44 @@
   <view class='section1'>
     <cover-image class='img' scr='http://placehold.it/750*300'></cover-image>
   </view>
+
   <view class='section2'>
     <view class='input-wrap'>
-        <view class='tag tag1'>最新报名</view>
-        <view class='tag tag2'>排行榜</view>
+      <view class='tag tag1'>最新报名</view>
+      <view class='tag tag2'>排行榜</view>
       <view class='tag tag3'>
         <icon type='search' size='15'></icon>
         <input placeholder='请输入名称或编号'></input>
       </view>
     </view>
   </view>
+  <view class='section3'>
+    <scroll-view class='scrollView-x' 
+    scroll-x
+    scroll-into-view='{{currentPage}}'
+    scroll-with-animation='true'
+    >
+      <view class='scroll-item' id='page1'>
+        <view class='item-wrap'>
+          <view class='item'></view>
+          <view class='item'></view>
+          <view class='item'></view>
+          <view class='item'></view>
+          <view class='item'></view>
+          <view class='item'></view>
+           <view class='item'></view>
+          <view class='item'></view>
+          <view class='item'></view>
+        </view>
+      </view>
+      <view class='scroll-item' id='page2'></view>
+       <view class='scroll-item' id='page3'></view>
+    </scroll-view>
+    <view class='navBar-wrap'>
+      <image  class='linkImg' src='/imgs/left.png'
+      bindtap="pageChange" data-direction='0'></image>
+      <image bindtap="pageChange" class='linkImg' src='/imgs/right.png'
+      data-direction='1'></image>
+    </view>
+  </view>
 </view>
-<import src="../../template/tabbar/tabbar.wxml" />
-<template is="tabBar" data="{{tabBar:bindData.tabBar}}" />
