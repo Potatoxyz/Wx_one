@@ -1,6 +1,6 @@
 <view class='contaienr'>
   <view class='section1'>
-    <cover-image class='img' scr='http://placehold.it/750*300'></cover-image>
+    <cover-image class='img' bindload='imLoad' scr='http://placehold.it/750x300'></cover-image>
   </view>
 
   <view class='section2'>
@@ -14,32 +14,31 @@
     </view>
   </view>
   <view class='section3'>
-    <scroll-view class='scrollView-x' 
-    scroll-x
-    scroll-into-view='{{currentPage}}'
-    scroll-with-animation='true'
-    >
-      <view class='scroll-item' id='page1'>
-        <view class='item-wrap'>
-          <view class='item'></view>
-          <view class='item'></view>
-          <view class='item'></view>
-          <view class='item'></view>
-          <view class='item'></view>
-          <view class='item'></view>
-           <view class='item'></view>
-          <view class='item'></view>
-          <view class='item'></view>
-        </view>
-      </view>
-      <view class='scroll-item' id='page2'></view>
-       <view class='scroll-item' id='page3'></view>
-    </scroll-view>
+    <swiper class='scrollView-x' current='{{current}}'>
+      <block wx:for="{{pageItems}}" wx:key='item' wx:for-index='i'>
+        <swiper-item class='scroll-item' id='page{{i}}'>
+          <view class='item-wrap'>
+            <view class='item' wx:for='{{tempItem}}' wx:key='item'>{{i+1}}</view>
+          </view>
+        </swiper-item>
+      </block>
+    </swiper>
     <view class='navBar-wrap'>
-      <image  class='linkImg' src='/imgs/left.png'
-      bindtap="pageChange" data-direction='0'></image>
-      <image bindtap="pageChange" class='linkImg' src='/imgs/right.png'
-      data-direction='1'></image>
+      <image class='linkImg' src='/imgs/left.png' bindtap="pageChange" data-direction='0'></image>
+      <view class='pageInfo'>{{current+1}}/{{pageItems.length-1}}</view>
+      <image bindtap="pageChange" class='linkImg' src='/imgs/right.png' data-direction='1'></image>
     </view>
+  </view>
+  <view class='section4'>
+  <view class='labelText'>主办单位</view>
+  <view class='obText mb10'>成都潮生活、潮妹儿吃成都</view>
+    <view class='labelText'>协办单位</view>
+  <view class='obText mb10'>成都凯德广场·魅力城</view>
+      <view class='labelText'>落地活动</view>
+      <view class='normalFz'>
+      <view class='obText inline'>"激情虾日，足够精彩"2018成都潮生活小龙虾节，</view>
+      <view class='redText inline normalFz'>6月30日16：00成都凯德广场·魅力城</view>
+      咱们不见不散！想嗨吃小龙虾一起看比赛吗？赶紧投上你宝贵的一票，勾搭小妹儿（微信：sdsch03）抢免费嗨吃名额！
+      </view>
   </view>
 </view>

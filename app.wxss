@@ -9,3 +9,15 @@
   padding: 200rpx 0;
   box-sizing: border-box;
 } 
+.mb10{
+  margin-bottom: 10px;
+}
+.inline{
+  display: inline-block;
+}
+.redText{
+  color:red;
+}
+.normalFz{
+  font-size:30rpx;
+}

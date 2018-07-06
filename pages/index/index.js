@@ -1,4 +1,4 @@
-
+var touchEvent=[];
 Page({
 
   /**
@@ -6,53 +6,38 @@ Page({
    */
   data: {
     pageItems: ['page1', 'page2','page3'],
-    currentPage:'page1'
+    current:0,
+    tempItem:new Array(9),
   },
-
+  // 加载图片
+  imLoad:function(e){
+    console.log(e);
+  },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
-    
+    wx.getImageInfo({
+      src: 'http://placehold.it/750x300',
+      success: function (res) {
+        console.log(res.width)
+        console.log(res.height)
+      }
+    })
   },
   //向左翻页按钮
   pageChange: function(e) {
     var isRight = Number(e.currentTarget.dataset.direction);
-    // console.log(typeof isRight);
-    var index;
-    this.data.pageItems.forEach((value,i)=>{
-      if(value==this.data.currentPage){index=i};
-    })
-    var length = this.data.pageItems.length;
-    var firstPage = this.data.pageItems[0];
-    var lastPage = this.data.pageItems[length-1];
-    // console.log(lastPage); 
-    if (isRight){
-      if (index != length - 1){
-        this.setData({
-          currentPage: this.data.pageItems[index + 1]
-        });
-      }
-     else{
-        this.setData({
-          currentPage: firstPage
-        });
-     }
-      // console.log(this.data.currentPage); 
+    if(isRight){
+      var pageLH = this.data.pageItems.length - 1;
+      var next = this.data.current < pageLH ? this.data.current + 1 : pageLH;
+      this.setData({ current: next})
     }
     else{
-      if (index != 0){
-        this.setData({
-          currentPage: this.data.pageItems[index - 1]
-        });
-      }
-     else{
-        this.setData({
-          currentPage: lastPage
-        });
-     }
-      // console.log(this.data.currentPage); 
+      var prev = this.data.current > 0 ? this.data.current - 1 : 0;
+      this.setData({ current: prev })
     }
+    console.log(this.data.current);
   },
   /**
    * 生命周期函数--监听页面初次渲染完成
