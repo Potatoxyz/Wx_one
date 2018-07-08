@@ -15,9 +15,12 @@
 .inline{
   display: inline-block;
 }
-.redText{
+.red-text{
   color:red;
 }
 .normalFz{
   font-size:30rpx;
+}
+.text-center{
+  text-align: center
 }

@@ -1,6 +1,6 @@
 <view class='contaienr'>
   <view class='section1'>
-    <cover-image class='img' bindload='imLoad' scr='http://placehold.it/750x300'></cover-image>
+   <image class="item-img" src="http://placehold.it/750x400"></image>
   </view>
 
   <view class='section2'>
@@ -14,18 +14,31 @@
     </view>
   </view>
   <view class='section3'>
-    <swiper class='scrollView-x' current='{{current}}'>
+    <swiper class='scrollView-x' current='{{current}}' bindanimationfinish="slided">
       <block wx:for="{{pageItems}}" wx:key='item' wx:for-index='i'>
         <swiper-item class='scroll-item' id='page{{i}}'>
           <view class='item-wrap'>
-            <view class='item' wx:for='{{tempItem}}' wx:key='item'>{{i+1}}</view>
+            <view class='item' wx:for='{{tempItem}}' wx:key='item'>
+            <view class="item-img-wrap">
+            <image class="item-img" src="http://placehold.it/300x300"></image>
+            </view>
+            <view class="item-text-wrap">
+            <view class="item-text item-title">霸王虾</view>
+            <view class="item-text item-ticket">
+            <view class="red-text">(编号：3)135682</view>票
+            </view>
+            <view class="item-text">
+            <view class="item-vote">投票</view> 
+            </view>
+            </view>
+            </view>
           </view>
         </swiper-item>
       </block>
     </swiper>
     <view class='navBar-wrap'>
       <image class='linkImg' src='/imgs/left.png' bindtap="pageChange" data-direction='0'></image>
-      <view class='pageInfo'>{{current+1}}/{{pageItems.length-1}}</view>
+      <view class='pageInfo'>{{current+1}}/{{pageItems.length}}</view>
       <image bindtap="pageChange" class='linkImg' src='/imgs/right.png' data-direction='1'></image>
     </view>
   </view>

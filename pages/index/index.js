@@ -9,21 +9,11 @@ Page({
     current:0,
     tempItem:new Array(9),
   },
-  // 加载图片
-  imLoad:function(e){
-    console.log(e);
-  },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
-    wx.getImageInfo({
-      src: 'http://placehold.it/750x300',
-      success: function (res) {
-        console.log(res.width)
-        console.log(res.height)
-      }
-    })
+    
   },
   //向左翻页按钮
   pageChange: function(e) {
@@ -38,6 +28,13 @@ Page({
       this.setData({ current: prev })
     }
     console.log(this.data.current);
+  },
+  // 触摸翻页事件
+  slided:function(e){
+    // console.log(e);
+    var current=e.detail.current;
+    this.setData({ current: current });
+    // console.log(this.data.current);
   },
   /**
    * 生命周期函数--监听页面初次渲染完成
