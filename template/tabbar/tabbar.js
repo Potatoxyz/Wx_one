@@ -3,14 +3,14 @@ function tabbarinit() {
   return [
     {
       "current": 0,
-      "pagePath": "/pages/index1/index1",
+      "pagePath": "/pages/index/index",
       "iconPath": "/imgs/home_on.png",
       "selectedIconPath": "/imgs/home_on.png",
       "text": "首页GO"
     },
     {
       "current": 0,
-      "pagePath": "/pages/index/index",
+      "pagePath": "/pages/index1/index1",
       "iconPath": "/imgs/list_on.png",
       "selectedIconPath": "/imgs/list_on.png",
       "text": "活动规则"
@@ -35,6 +35,7 @@ function tabbarmain(bindName = "tabdata", id, target) {
   otabbar[id]['current'] = 1;
   bindData[bindName] = otabbar
   that.setData({ bindData });
+  console.log(bindData);
 }
 
 module.exports = {

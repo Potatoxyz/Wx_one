@@ -1,4 +1,5 @@
 var touchEvent=[];
+var template=require('../../template/tabbar/tabbar.js');
 Page({
 
   /**
@@ -7,13 +8,13 @@ Page({
   data: {
     pageItems: ['page1', 'page2','page3'],
     current:0,
-    tempItem:new Array(9),
+    tempItem:new Array(9)
   },
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function(options) {
-    
+  onLoad: function() {
+    template.tabbar("tabBar", 0, this)
   },
   //向左翻页按钮
   pageChange: function(e) {
@@ -36,11 +37,21 @@ Page({
     this.setData({ current: current });
     // console.log(this.data.current);
   },
+  nav:function(){
+    wx.navigateTo({
+      url: '../../pages/index1/index1',
+      success:function(){
+        console.log('s');
+      },
+      fail:function(){
+        console.log();
+      }
+    });
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function() {
-
   },
 
   /**

@@ -2,7 +2,7 @@
 <view class="tabBar">
   <block wx:for="{{tabBar}}" wx:for-item="item" wx:key="tabBar">
     <view class="tabBar-item">
-      <navigator class='navigator' open-type="redirect" url="{{item.pagePath}}">
+      <navigator class='navigator' open-type="navigate" url="{{item.pagePath}}">
         <view class="icon-wrap"><image class="icon" src='{{item.iconPath}}'></image></view>
         <view class="text {{item.current== 1 ? 'tabBartext' :''}}">{{item.text}}</view>
       </navigator>  
