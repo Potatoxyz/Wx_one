@@ -1,8 +1,7 @@
-Page(
-  {
-    data:
-      {
-      content:"活动规则活动规则活动规则"
-      }
-  }
-)
+var modal=function(modalContent,that){
+  that.setData({ modalContent: modalContent,showModal:false});
+}
+
+module.exports={
+  modal: modal
+};

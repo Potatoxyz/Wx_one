@@ -10,7 +10,7 @@ function tabbarinit() {
     },
     {
       "current": 0,
-      "pagePath": "/pages/index1/index1",
+      "pagePath": "#",
       "iconPath": "/imgs/list_on.png",
       "selectedIconPath": "/imgs/list_on.png",
       "text": "活动规则"
@@ -28,7 +28,7 @@ function tabbarinit() {
 }
 //tabbar 主入口
 function tabbarmain(bindName = "tabdata", id, target) {
-  var that = target;
+  var  that = target;
   var bindData = {};
   var otabbar = tabbarinit();
   otabbar[id]['iconPath'] = otabbar[id]['selectedIconPath']//换当前的icon
@@ -37,7 +37,25 @@ function tabbarmain(bindName = "tabdata", id, target) {
   that.setData({ bindData });
   console.log(bindData);
 }
-
+var showModal = function () {
+  this.setData({ showModal: true });
+}
+var closeModal = function () {
+  this.setData({ showModal: false });
+}
+var redirect=function(e){
+  console.log(e.currentTarget.dataset.url);
+  var url = e.currentTarget.dataset.url;
+  if(url!='#'){
+    wx.navigateTo({
+      url: url,
+    })
+  }
+  else{
+   showModal();
+  }
+}
 module.exports = {
-  tabbar: tabbarmain
+  tabbar: tabbarmain,
+  redirect: redirect
 }

@@ -1,6 +1,6 @@
 <template name="modal">
 
-  <view class="bgBlack">
+  <view class="bgBlack {{showModal==true?'':'none'}}">
 
     <view class='modal-container'>
 
@@ -11,7 +11,7 @@
 
       </view>
 
-      <view class='content'>{{content}}</view>
+      <view class='content'>{{modalContent}}</view>
 
     </view>
 

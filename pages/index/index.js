@@ -1,5 +1,6 @@
 var touchEvent=[];
-var template=require('../../template/tabbar/tabbar.js');
+var tabbar=require('../../template/tabbar/tabbar.js');
+var modal = require('../../template/modal/modal.js');
 Page({
 
   /**
@@ -14,7 +15,10 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function() {
-    template.tabbar("tabBar", 0, this)
+    tabbar.tabbar("tabBar", 0, this);
+    // 绑定跳转事件
+    this.redirect = tabbar.redirect;
+    modal.modal('???',this);
   },
   //向左翻页按钮
   pageChange: function(e) {
