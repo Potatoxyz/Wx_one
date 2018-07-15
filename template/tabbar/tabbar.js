@@ -40,9 +40,6 @@ function tabbarmain(bindName = "tabdata", id, target) {
 var showModal = function () {
   this.setData({ showModal: true });
 }
-var closeModal = function () {
-  this.setData({ showModal: false });
-}
 var redirect=function(e){
   console.log(e.currentTarget.dataset.url);
   var url = e.currentTarget.dataset.url;
@@ -52,10 +49,11 @@ var redirect=function(e){
     })
   }
   else{
-   showModal();
+   this.showModal();
   }
 }
 module.exports = {
   tabbar: tabbarmain,
-  redirect: redirect
+  redirect: redirect,
+  showModal: showModal
 }

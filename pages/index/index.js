@@ -16,9 +16,13 @@ Page({
    */
   onLoad: function() {
     tabbar.tabbar("tabBar", 0, this);
+    // 
+    modal.modal(this);
     // 绑定跳转事件
     this.redirect = tabbar.redirect;
-    modal.modal('???',this);
+    this.showModal = tabbar.showModal;
+    this.closeModal = modal.closeModal;
+ 
   },
   //向左翻页按钮
   pageChange: function(e) {
@@ -40,17 +44,6 @@ Page({
     var current=e.detail.current;
     this.setData({ current: current });
     // console.log(this.data.current);
-  },
-  nav:function(){
-    wx.navigateTo({
-      url: '../../pages/index1/index1',
-      success:function(){
-        console.log('s');
-      },
-      fail:function(){
-        console.log();
-      }
-    });
   },
   /**
    * 生命周期函数--监听页面初次渲染完成

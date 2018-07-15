@@ -58,4 +58,4 @@
 <import src="../../template/tabbar/tabbar.wxml"/>
 <template is="tabBar" data="{{tabBar:bindData.tabBar}}"/>
 <import src="../../template/modal/modal.wxml"/>
-<template is="modal" data="{{modalContent:modalContent}}"/>
+<template is="modal" data="{{showModal:showModal}}"/>

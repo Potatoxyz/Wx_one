@@ -1,6 +1,6 @@
 <template name="modal">
 
-  <view class="bgBlack {{showModal==true?'':'none'}}">
+  <view class="bgBlack {{showModal==true?'':'none'}}" catchtouchmove="preventTouchMove">
 
     <view class='modal-container'>
 
@@ -11,8 +11,22 @@
 
       </view>
 
-      <view class='content'>{{modalContent}}</view>
-
+      <view class='content'>
+      <view class='bold mb10'>投票时间：</view>
+      <view class='bold mb20'>2018-7-15 ~ 2018-10-15</view>
+      <view class='bold mb20'>投票说明：</view>
+      <view class='mb10'>
+      <view class='mb10'>1.每位用户最多有十次投票的机会</view>
+      <view class='mb10'>2.同一个商家，每人每天最多可为其投票5次</view>
+      <view class='red-text mb20'>* 本活动的最终解释权归主办方所有</view>
+      </view>
+      <view class='button-wrap' bindtap='closeModal'>
+            <button type='warn' class='know'>我知道了</button>
+      </view>
+      </view>
+      <view class='closeModal' bindtap='closeModal'>
+      <image class='close' src='../../imgs/close-circle.png'></image>
+      </view>
     </view>
 
   </view>
